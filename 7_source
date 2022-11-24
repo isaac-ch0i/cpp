@@ -1,3 +1,4 @@
+//클래스 변수를 어떻게 다른 파일도 접근하게 할 수 있게 하는지 
 #include <iostream>
 #include "Buff.h"
 #include "Fight.h"
