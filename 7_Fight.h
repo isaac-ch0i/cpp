@@ -4,8 +4,8 @@
 
 using namespace std;
 
-extern player alpha;
-extern monster beta;
+player alpha;
+monster beta;
 
 int fight(char action[6]) {
 	if (!strcmp(action, "fight")) {
