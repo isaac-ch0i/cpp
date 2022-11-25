@@ -1,4 +1,3 @@
-//클래스 변수를 어떻게 다른 파일도 접근하게 할 수 있게 하는지 
 #include <iostream>
 #include "Buff.h"
 #include "Fight.h"
@@ -29,10 +28,10 @@ int game_start() {
 	beta.hp = 10;
 
 	select_difficulty();
-	while (alpha.hp && beta.hp) {
+	while (alpha.hp != 0 && beta.hp != 0) {
 		cout << turn << "turn" << endl;
-		player_status();
 		monster_status();
+		player_status();
 		cout << "Select player's action" << endl;
 		cin >> action;
 		buff(action);
@@ -72,17 +71,17 @@ int select_difficulty() {
 int player_status() {
 	cout << "player hp : ";
 	for (int i = 0; i < alpha.hp; i++) {
-		cout << 0;
+		cout << 0 << " ";
 	}
 	cout << endl;
 	cout << "player op : " << alpha.op << endl;
 	return (0);
 }
 
-int moster_status() {
+int monster_status() {
 	cout << "moster hp : ";
 	for (int i = 0; i < beta.hp; i++) {
-		cout << 0;
+		cout << 0 << " ";
 	}
 	cout << endl;
 	cout << "monster op : " << beta.op << endl;
@@ -90,11 +89,11 @@ int moster_status() {
 }
 
 int get_point() {
-	if (!alpha.hp) {
+	if (alpha.hp == 0) {
 		cout << "You get 0 points" << endl;
 	}
-	else if (!beta.hp) {
-		cout << "Tou get " << alpha.hp << " points" << endl;
+	else if (beta.hp == 0) {
+		cout << "You get " << alpha.hp << " points" << endl;
 	}
 	return (0);
 }
